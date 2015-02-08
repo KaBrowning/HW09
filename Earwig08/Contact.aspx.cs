@@ -42,8 +42,12 @@ public partial class Request : System.Web.UI.Page
     /// </summary>
     private void DisplayReservation()
     {
-        // Replace this comment with the appropriate code to load
-        //  the data out of the object and onto the page
+
+        this.txtFirstName.Text = this._contactDetails.FirstName;
+        this.txtLastName.Text = this._contactDetails.LastName;
+        this.txtEmail.Text = this._contactDetails.Email;
+        this.txtPhone.Text = this._contactDetails.Phone;
+        this.ddlPreferredMethod.Text = this._contactDetails.PreferredMethod;
     }
 
     /// <summary>
@@ -74,7 +78,7 @@ public partial class Request : System.Web.UI.Page
             LastName = this.txtLastName.Text,
             Phone = this.txtPhone.Text,
             Email = this.txtEmail.Text,
-            PreferredMethod = this.ddlPreferredMethod.SelectedValue;
+            PreferredMethod = this.ddlPreferredMethod.SelectedValue,
         };
         Session["ContactDetails"] = newDetails;
 
