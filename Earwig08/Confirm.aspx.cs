@@ -36,7 +36,11 @@ public partial class Confirm : System.Web.UI.Page
         HttpCookie firstNameCookie = new HttpCookie("FirstName", this.lblFirstName.Text);
         firstNameCookie.Expires = DateTime.Now.AddMinutes(10);
 
+        Response.Cookies.Add(firstNameCookie);
+
         HttpCookie lastNameCookie = new HttpCookie("LastName", this.lblLastName.Text);
         lastNameCookie.Expires = DateTime.Now.AddMinutes(10);
+
+        Response.Cookies.Add(lastNameCookie);
     }
 }

@@ -20,9 +20,12 @@ public partial class Request : System.Web.UI.Page
     {
         if (IsPostBack)
             return;
-        
-        // Replace this comment with code to pull the data out of the
-        //  Session object and pass it to DisplayReservation
+
+        if (Request.Cookies["FirstName"] != null && Request.Cookies["LastName"] != null)
+        {
+            this.txtFirstName.Text = Request.Cookies["FirstName"].Value;
+            this.txtLastName.Text = Request.Cookies["LastName"].Value;
+        }
     }
 
     /// <summary>
