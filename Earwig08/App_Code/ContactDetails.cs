@@ -8,10 +8,12 @@ using System.Web;
 /// </summary>
 public class ContactDetails
 {
-	public ContactDetails()
-	{
-		//
-		// TODO: Add constructor logic here
-		//
-	}
+    public static ContactDetails GetContactDetails()
+    {
+        var cart = HttpContext.Current.Session["Contact"] as ContactDetails;
+        if (cart == null)
+            HttpContext.Current.Session["Contact"] = new ContactDetails();
+        return (ContactDetails)HttpContext.Current.Session["Contact"];
+    }
+
 }
