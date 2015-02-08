@@ -6,13 +6,28 @@
 <head runat="server">
     <title>Kathryn Browning Earwig:Ch09</title>
     <link href="Styles/Main.css" rel="stylesheet"/>
+
     <asp:ContentPlaceHolder id="headerPlaceHolder" runat="server">
+        
     </asp:ContentPlaceHolder>
 </head>
 <body>
+<header>
+    <asp:Image ID="imgMotel" runat="server" ImageUrl="~/Images/The_Happy_Earwig_Motel.png" BorderColor="White" BorderWidth="10px" ImageAlign="Left" />
+        <h1>The Happy Earwig Motel</h1>
+        <h2>Our crawl-space now body-free!</h2>
+        <p><br/><br/></p>
+    </header>
 
+    <section>
         <asp:ContentPlaceHolder id="formPlaceHolder" runat="server">
         
         </asp:ContentPlaceHolder>
+    </section>
+
+    <footer>
+        <p>&copy; 2015, Happy Earwig Motel</p>
+    </footer>
+
 </body>
 </html>
