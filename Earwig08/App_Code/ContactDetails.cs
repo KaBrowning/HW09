@@ -13,13 +13,14 @@ public class ContactDetails
     private string _lastName;
     private string _email;
     private string _phone;
+    private string _preferredMethod;
 
     public static ContactDetails GetContactDetails()
     {
         var cart = HttpContext.Current.Session["Contact"] as ContactDetails;
         if (cart == null)
             HttpContext.Current.Session["Contact"] = new ContactDetails();
-        return (ContactDetails)HttpContext.Current.Session["Contact"];
+        return (ContactDetails) HttpContext.Current.Session["Contact"];
     }
 
     public string FirstName
@@ -61,4 +62,15 @@ public class ContactDetails
             this._phone = value;
         }
     }
+
+    public string PreferredMethod
+    {
+        get { return this._preferredMethod; }
+        set
+        {
+            Trace.Assert(value != null, "Invalid Preferred Method");
+            this._preferredMethod = value;
+        }        
+    }
+
 }

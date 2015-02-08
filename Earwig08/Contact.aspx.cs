@@ -61,4 +61,23 @@ public partial class Request : System.Web.UI.Page
         this.lblMessage.Text = "";
     }
 
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        if (!IsValid)
+        {
+            return;
+        }
+
+        ContactDetails newDetails = new ContactDetails()
+        {
+            FirstName = this.txtFirstName.Text,
+            LastName = this.txtLastName.Text,
+            Phone = this.txtPhone.Text,
+            Email = this.txtEmail.Text,
+            PreferredMethod = this.ddlPreferredMethod.SelectedValue;
+        };
+        Session["ContactDetails"] = newDetails;
+
+        Response.Redirect("Confirm.aspx");
+    }
 }
