@@ -68,7 +68,7 @@ public partial class Request : System.Web.UI.Page
             return;
         }
 
-        ContactDetails newDetails = new ContactDetails()
+        var newDetails = new ContactDetails()
         {
             FirstName = this.txtFirstName.Text,
             LastName = this.txtLastName.Text,
@@ -78,7 +78,7 @@ public partial class Request : System.Web.UI.Page
         };
         Session["ContactDetails"] = newDetails;
 
-        int count = 0;
+        var count = 0;
         if(Session["count"] == null)
         {
             count = Convert.ToInt32(Session["Count"]);
@@ -86,9 +86,9 @@ public partial class Request : System.Web.UI.Page
         count++;
         Session["count"] = count;
         
-        var aCount = Convert.ToInt32(Session["count"]);
+        var anotherCount = Convert.ToInt32(Session["count"]);
 
-        this.lblMessage.Text = "It took you " + aCount + " clicks on Submit<br/> Thank you for your" +
+        this.lblMessage.Text = "It took you " + anotherCount + " clicks on Submit<br/> Thank you for your" +
                                "request.<br/>We will get back to you within 24 hours.";
 
         Response.Redirect("Confirm.aspx");

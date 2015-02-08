@@ -12,6 +12,8 @@ using System.Web;
 /// </version>
 public partial class Confirm : System.Web.UI.Page
 {
+    private ContactDetails _contactDetails;
+
     /// <summary>
     /// Handles the Load event of the Page control.
     /// </summary>
@@ -19,8 +21,11 @@ public partial class Confirm : System.Web.UI.Page
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     protected void Page_Load(object sender, EventArgs e)
     {
-        // Replace this comment with code to pull the data out of the
-        //  Session object and pass it to DisplayReservation
+        if (Session["ContactDetails"] != null)
+        {
+            this._contactDetails = (ContactDetails) Session["ContactDetails"];
+            this.DisplayReservation();
+        }
     }
 
     /// <summary>
@@ -28,9 +33,13 @@ public partial class Confirm : System.Web.UI.Page
     /// </summary>
     private void DisplayReservation()
     {
-        // Replace this comment with the appropriate code to load
-        //  the data out of the object and onto the page
+        this.lblFirstName.Text = this._contactDetails.FirstName;
+        this.lblLastName.Text = this._contactDetails.LastName;
+        this.lblEmail.Text = this._contactDetails.Email;
+        this.lblPhone.Text = this._contactDetails.Phone;
+        this.lblPreferredMethod.Text = this._contactDetails.PreferredMethod;
     }
+
     protected void btnConfirm_Click(object sender, EventArgs e)
     {
         HttpCookie firstNameCookie = new HttpCookie("FirstName", this.lblFirstName.Text);
