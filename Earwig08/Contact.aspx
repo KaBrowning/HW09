@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title>Chapter 8: Earwig</title>
-    <link href="Styles/Main.css" rel="stylesheet"/>
-    <link href="Styles/Request.css" rel="stylesheet" />
-</head>
+
+    <asp:Content ID="headContent" ContentPlaceHolderID="headerPlaceHolder" runat="server">
+           <title>Chapter 8: Earwig</title>
+            <link href="Styles/Request.css" rel="stylesheet" />
+            </asp:Content>
 <body>
     <header>
         <asp:Image ID="imgMotel" runat="server" ImageUrl="~/Images/The_Happy_Earwig_Motel.png" BorderColor="White" BorderWidth="10px" ImageAlign="Left" />
