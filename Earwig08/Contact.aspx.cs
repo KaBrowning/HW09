@@ -11,6 +11,9 @@
 /// </version>
 public partial class Request : System.Web.UI.Page
 {
+
+    private ContactDetails _contactDetails;
+
     /// <summary>
     /// Handles the Load event of the Page control.
     /// </summary>
@@ -21,7 +24,13 @@ public partial class Request : System.Web.UI.Page
         if (IsPostBack)
             return;
 
-        if (Request.Cookies["FirstName"] != null && Request.Cookies["LastName"] != null)
+
+        if (Session["ContactDetails"] != null)
+        {
+            this._contactDetails = (ContactDetails) Session["ContactDetails"];
+            this.DisplayReservation();
+        }
+        else if (Request.Cookies["FirstName"] != null && Request.Cookies["LastName"] != null)
         {
             this.txtFirstName.Text = Request.Cookies["FirstName"].Value;
             this.txtLastName.Text = Request.Cookies["LastName"].Value;
