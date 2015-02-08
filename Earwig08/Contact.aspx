@@ -15,8 +15,9 @@
         <h2>Our crawl-space now body-free!</h2>
         <p><br/><br/></p>
     </header>
+
     <section>
-        <form id="form1" runat="server" defaultbutton="btnSubmit" defaultfocus="txtArrivalDate">
+        <asp:Content ID="formContent" ContentPlaceHolderID="formPlaceHolder" runat="server">
             <h1>Contact Information<br/><br/></h1>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="* means that the field is required" CssClass="validator" />
 
@@ -57,7 +58,8 @@
             <p ID="message">
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
             </p>
-    </form>
+    </asp:Content>
+
     </section>
     <footer>
         <p>&copy; 2015, Happy Earwig Motel</p>
