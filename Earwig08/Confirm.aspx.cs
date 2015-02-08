@@ -48,12 +48,12 @@ public partial class Confirm : System.Web.UI.Page
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     protected void btnConfirm_Click(object sender, EventArgs e)
     {
-        HttpCookie firstNameCookie = new HttpCookie("FirstName", this.lblFirstName.Text);
+        var firstNameCookie = new HttpCookie("FirstName", this.lblFirstName.Text);
         firstNameCookie.Expires = DateTime.Now.AddMinutes(10);
 
         Response.Cookies.Add(firstNameCookie);
 
-        HttpCookie lastNameCookie = new HttpCookie("LastName", this.lblLastName.Text);
+        var lastNameCookie = new HttpCookie("LastName", this.lblLastName.Text);
         lastNameCookie.Expires = DateTime.Now.AddMinutes(10);
 
         Response.Cookies.Add(lastNameCookie);
