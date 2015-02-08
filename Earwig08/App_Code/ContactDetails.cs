@@ -5,8 +5,10 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for ContactDetails
+/// Gets and sets the values of all of the contact information.
 /// </summary>
+/// <author>Kathryn Browning</author>
+/// <version>February 8, 2015</version>
 public class ContactDetails
 {
     private string _firstName;
@@ -15,6 +17,10 @@ public class ContactDetails
     private string _phone;
     private string _preferredMethod;
 
+    /// <summary>
+    /// Gets the contact details.
+    /// </summary>
+    /// <returns></returns>
     public static ContactDetails GetContactDetails()
     {
         var cart = HttpContext.Current.Session["Contact"] as ContactDetails;
@@ -23,6 +29,12 @@ public class ContactDetails
         return (ContactDetails) HttpContext.Current.Session["Contact"];
     }
 
+    /// <summary>
+    /// Gets or sets the first name.
+    /// </summary>
+    /// <value>
+    /// The first name.
+    /// </value>
     public string FirstName
     {
         get { return this._firstName; }
@@ -33,6 +45,12 @@ public class ContactDetails
         }
     }
 
+    /// <summary>
+    /// Gets or sets the last name.
+    /// </summary>
+    /// <value>
+    /// The last name.
+    /// </value>
     public string LastName
     {
         get { return this._lastName; }
@@ -43,6 +61,12 @@ public class ContactDetails
         }
     }
 
+    /// <summary>
+    /// Gets or sets the email.
+    /// </summary>
+    /// <value>
+    /// The email.
+    /// </value>
     public string Email
     {
         get { return this._email; }
@@ -53,6 +77,12 @@ public class ContactDetails
         }
     }
 
+    /// <summary>
+    /// Gets or sets the phone.
+    /// </summary>
+    /// <value>
+    /// The phone.
+    /// </value>
     public string Phone
     {
         get { return this._phone; }
@@ -63,6 +93,12 @@ public class ContactDetails
         }
     }
 
+    /// <summary>
+    /// Gets or sets the preferred method.
+    /// </summary>
+    /// <value>
+    /// The preferred method.
+    /// </value>
     public string PreferredMethod
     {
         get { return this._preferredMethod; }

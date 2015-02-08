@@ -21,11 +21,12 @@ public partial class Confirm : System.Web.UI.Page
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["ContactDetails"] != null)
+        if (Session["ContactDetails"] == null)
         {
-            this._contactDetails = (ContactDetails) Session["ContactDetails"];
-            this.DisplayReservation();
+            return;
         }
+        this._contactDetails = (ContactDetails) Session["ContactDetails"];
+        this.DisplayReservation();
     }
 
     /// <summary>
@@ -40,6 +41,11 @@ public partial class Confirm : System.Web.UI.Page
         this.lblPreferredMethod.Text = this._contactDetails.PreferredMethod;
     }
 
+    /// <summary>
+    /// Handles the Click event of the btnConfirm control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     protected void btnConfirm_Click(object sender, EventArgs e)
     {
         HttpCookie firstNameCookie = new HttpCookie("FirstName", this.lblFirstName.Text);
