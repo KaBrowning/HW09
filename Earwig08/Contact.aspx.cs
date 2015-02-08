@@ -89,12 +89,11 @@ public partial class Request : System.Web.UI.Page
         }
         count++;
         Session["count"] = count;
-        
-        var anotherCount = Convert.ToInt32(Session["count"]);
-
-        this.lblMessage.Text = "It took you " + anotherCount + " clicks on Submit<br/> Thank you for your" +
-                               "request.<br/>We will get back to you within 24 hours.";
 
         Response.Redirect("Confirm.aspx");
+
+        count = Convert.ToInt32(Session["count"]);
+        this.lblMessage.Text = "It took you " + count + " clicks on Submit<br/> Thank you for your" +
+                               "request.<br/>We will get back to you within 24 hours.";
     }
 }
