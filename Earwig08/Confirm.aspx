@@ -1,22 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Confirm.aspx.cs" Inherits="Confirm" %>
+﻿<%@ Page Language="C#" MasterPageFile = "~/Earwig.master" AutoEventWireup="true" CodeFile="Confirm.aspx.cs" Inherits="Confirm" %>
 
-<!DOCTYPE html>
+    <asp:Content ID="headContent" ContentPlaceHolderID="headerPlaceHolder" runat="server">
+        <link href="Styles/Main.css" rel="stylesheet" />
+        <link href="Styles/Confirm.css" rel="stylesheet" />
+        </asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title>Chapter 8: Earwig</title>
-    <link href="Styles/Main.css" rel="stylesheet" />
-    <link href="Styles/Confirm.css" rel="stylesheet" />
-</head>
-<body>
-    <header>
-        <asp:Image ID="imgMotel" runat="server" ImageUrl="~/Images/The_Happy_Earwig_Motel.png" BorderColor="White" BorderWidth="10px" ImageAlign="Left" />
-        <h1>The Happy Earwig Motel</h1>
-        <h2>Our crawl-space now body-free!</h2>
-        <p><br/><br/></p>
-    </header>
-    <section>
-        <form id="form1" runat="server">
+    <asp:Content ID="formContent" ContentPlaceHolderID="formPlaceHolder" runat="server">
             <h1>Request Confirmation</h1>
             <h2>Please confirm your reservation request</h2>
             <label>First name</label>
@@ -35,10 +24,4 @@
             <p id="message">
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
             </p>
-        </form>    
-    </section>
-    <footer>
-        <p>&copy; 2015, Happy Earwig Motel</p>
-    </footer>
-</body>
-</html>
+      </asp:Content>
