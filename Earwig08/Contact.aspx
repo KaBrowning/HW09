@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Request" %>
+﻿<%@ Page Language="C#" MasterPageFile = "~/Earwig.master" AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Request" %>
 
 <!DOCTYPE html>
 
