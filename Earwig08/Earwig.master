@@ -20,9 +20,11 @@
     </header>
 
     <section>
+        <form id="form" runat="server">
         <asp:ContentPlaceHolder id="formPlaceHolder" runat="server">
         
         </asp:ContentPlaceHolder>
+            </form>
     </section>
 
     <footer>

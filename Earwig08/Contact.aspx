@@ -1,22 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile = "~/Earwig.master" AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Request" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
     <asp:Content ID="headContent" ContentPlaceHolderID="headerPlaceHolder" runat="server">
-           <title>Chapter 8: Earwig</title>
+            <link href="Styles/Main.css" rel="stylesheet"/>
             <link href="Styles/Request.css" rel="stylesheet" />
             </asp:Content>
-<body>
-    <header>
-        <asp:Image ID="imgMotel" runat="server" ImageUrl="~/Images/The_Happy_Earwig_Motel.png" BorderColor="White" BorderWidth="10px" ImageAlign="Left" />
-        <h1>The Happy Earwig Motel</h1>
-        <h2>Our crawl-space now body-free!</h2>
-        <p><br/><br/></p>
-    </header>
 
-    <section>
         <asp:Content ID="formContent" ContentPlaceHolderID="formPlaceHolder" runat="server">
             <h1>Contact Information<br/><br/></h1>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="* means that the field is required" CssClass="validator" />
@@ -55,14 +43,8 @@
             <label class="label">&nbsp;</label>
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="button" OnClick="btnSubmit_Click" />&nbsp;
             <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="button" CausesValidation="False" OnClick="btnClear_Click" /><br />
-            <p ID="message">
+            <p>
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
             </p>
     </asp:Content>
 
-    </section>
-    <footer>
-        <p>&copy; 2015, Happy Earwig Motel</p>
-    </footer>
-</body>
-</html>
