@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Earwig.master.cs" Inherits="Earwig" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Kathryn Browning Earwig:Ch09</title>
+    <link href="Styles/Main.css" rel="stylesheet"/>
+    <asp:ContentPlaceHolder id="headerPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+        <asp:ContentPlaceHolder id="formPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+</body>
+</html>
