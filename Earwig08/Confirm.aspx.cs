@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 
 /// <summary>
 /// This is the code-behind file for the Confirmation page
@@ -29,5 +30,13 @@ public partial class Confirm : System.Web.UI.Page
     {
         // Replace this comment with the appropriate code to load
         //  the data out of the object and onto the page
+    }
+    protected void btnConfirm_Click(object sender, EventArgs e)
+    {
+        HttpCookie firstNameCookie = new HttpCookie("FirstName", this.lblFirstName.Text);
+        firstNameCookie.Expires = DateTime.Now.AddMinutes(10);
+
+        HttpCookie lastNameCookie = new HttpCookie("LastName", this.lblLastName.Text);
+        lastNameCookie.Expires = DateTime.Now.AddMinutes(10);
     }
 }
