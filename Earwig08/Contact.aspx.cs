@@ -83,17 +83,13 @@ public partial class Request : System.Web.UI.Page
         Session["ContactDetails"] = newDetails;
 
         var count = 0;
-        if(Session["count"] == null)
+        if (Session["count"] == null)
         {
             count = Convert.ToInt32(Session["Count"]);
         }
-        count++;
+         count++;
+       
         Session["count"] = count;
-
         Response.Redirect("Confirm.aspx");
-
-        count = Convert.ToInt32(Session["count"]);
-        this.lblMessage.Text = "It took you " + count + " clicks on Submit<br/> Thank you for your" +
-                               "request.<br/>We will get back to you within 24 hours.";
     }
 }

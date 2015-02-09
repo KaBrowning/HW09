@@ -27,6 +27,10 @@ public partial class Confirm : System.Web.UI.Page
         }
         this._contactDetails = (ContactDetails) Session["ContactDetails"];
         this.DisplayReservation();
+
+        var count = Convert.ToInt32(Session["count"]);
+        this.lblMessage.Text = "It took you " + count + " clicks on Submit<br/> Thank you for your" +
+                               " request.<br/>We will get back to you within 24 hours.";
     }
 
     /// <summary>

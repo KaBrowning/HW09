@@ -21,7 +21,7 @@
             <br />
             <asp:Button ID="btnConfirm" runat="server" Text="Confirm" CssClass="button" OnClick="btnConfirm_Click" />
             <asp:Button ID="btnModify" runat="server" Text="Modify" CssClass="button" PostBackUrl="~/Contact.aspx" /><br />
-            <p id="message">
+            <p>
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
             </p>
       </asp:Content>

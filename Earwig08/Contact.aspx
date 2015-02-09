@@ -44,7 +44,7 @@
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="button" OnClick="btnSubmit_Click" />&nbsp;
             <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="button" CausesValidation="False" OnClick="btnClear_Click" /><br />
             <p>
-                <asp:Label ID="lblMessage" runat="server"></asp:Label>
+                <asp:Label ID="lblMessage" runat="server" AssociatedControlID="btnSubmit"></asp:Label>
             </p>
     </asp:Content>
 
